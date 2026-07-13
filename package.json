@@ -1,0 +1,12 @@
+{
+  "name": "medicine-reminder",
+  "version": "1.0.0",
+  "description": "Medicine reminder fullstack application",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix frontend run dev\" \"cd backend && .\\venv\\Scripts\\python.exe manage.py runserver\"",
+    "install:all": "npm install --prefix frontend && cd backend && .\\venv\\Scripts\\pip install -r requirements.txt"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
