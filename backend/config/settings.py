@@ -10,9 +10,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Load environment variables from .env file
 load_dotenv(BASE_DIR / '.env')
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-h#0%h*&2!-0g$x(r7wki(0k#7m-7ng1x^l^dh-xbugz^jpkpr5')
-DEBUG = os.getenv('DEBUG', 'True') == 'True'
+SECRET_KEY = "django-test-secret-key-123456789"
+DEBUG = False
 
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    ".onrender.com",
+]
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -154,4 +159,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 CORS_ALLOW_ALL_ORIGINS = True
